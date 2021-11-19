@@ -8,9 +8,9 @@ include: "/views/*.view.lkml"                # include all views in the views/ f
 explore: order_items {
  # sql_always_where: ${status} != 'Cancelled' ;;
 
-always_filter: {
-  filters: [order_items.status: "-Cancelled"]
-}
+# always_filter: {
+#   filters: [order_items.status: "-Cancelled"]
+# }
  # fields: [-users.users_set*]
   description: "One stop shop for my orders"
   label: "Corporate Orders"
@@ -22,7 +22,7 @@ always_filter: {
   }
 
   join: users {
-    fields: [users.users_set*]  #
+   # fields: [users.users_set*]  #
 
   view_label: "Corporate Users"  # benefit
 

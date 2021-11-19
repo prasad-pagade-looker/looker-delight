@@ -17,6 +17,7 @@ view: order_items {
       date,
       week,
       month,
+      month_name,
       quarter,
       year
     ]
@@ -170,7 +171,7 @@ view: order_items {
   }
 
   measure: average_sales_price {
-    label: "Total Sales Price" # Also talk about quick help
+    label: "Average Sales Price" # Also talk about quick help
     type: average
     sql: ${sale_price} ;;
     drill_fields: [order_id, status, created_date] #
@@ -186,6 +187,35 @@ view: order_items {
     # drill_fields: [detail*]
     drill_fields: [order_id, status, created_date]
   }
+
+  #### Notes #######
+  # - Drill Fields
+  # - Types of dimension types - string, tiers, yesno, number(datefill)
+  # - Types of measures - Sum, Average,Median, Number
+  # - Explore
+  #   - Sql_always_where
+  #   - join logic
+  # - Transitive Join
+  #   - Explain SQL works referencing the model we have built so far
+  # - Link
+  #   - Link to another dashboard, website etc.
+  # - Group label, view label
+  # - How troubleshoot an error
+  # - How to decide Explores, Models
+  # - Sets and fields
+
+  # Explores
+  # - Labels - Design Explore dropdown UI
+  # - View label
+  # - How to query results
+  # - Use row limits
+  # - Shortcuts shift+?
+  # - Go to LookML to see definition of metrics
+
+ # Dashboards
+  # - https://community.looker.com/dashboards-looks-7/new-dashboards-beta-html-options-18186
+
+
 
   # ----- Sets of fields for drilling ------
   set: detail {

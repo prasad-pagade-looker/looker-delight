@@ -88,6 +88,13 @@ view: users {
     sql: ${TABLE}.zip ;;
   }
 
+  dimension: location {
+    group_label: "Location"
+    type: location
+    sql_latitude: ${latitude} ;;
+   sql_longitude: ${longitude} ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [id, last_name, first_name, order_items.count]

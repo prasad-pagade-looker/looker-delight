@@ -6,6 +6,7 @@ include: "/views/*.view.lkml"                # include all views in the views/ f
 explore: inventory_items {
   label: "Product and Inventory Mgmt"
   description: "Inventory and Product Data"
+
   join: products {
     view_label: "Products List"
     type: left_outer
