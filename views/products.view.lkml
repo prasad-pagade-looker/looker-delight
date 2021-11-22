@@ -9,6 +9,20 @@ view: products {
     sql: ${TABLE}.id ;;
   }
 
+  filter: brand_select {
+    suggest_dimension: products.brand
+  }
+
+  dimension: brand_comparitor {
+    type: string
+    sql:
+    CASE
+      WHEN {% condition brand_select %} ${brand} {% endcondition %}
+        THEN ${brand}
+      ELSE 'Rest of Population'
+    END ;;
+    }
+
   dimension: brand {
     label: "Brand"
     sql: TRIM(${TABLE}.brand) ;;

@@ -138,6 +138,40 @@ view: order_items {
     style: relational
   }
 
+  # parameter: select_timeframe{
+  #   type: unquoted
+  #   default_value: "YEAR"
+  #   allowed_value: {
+  #     label: "YEAR"
+  #     value: "YEAR"
+  #   }
+
+  #   allowed_value: {
+  #     label: "WEEK"
+  #     value: "WEEK"
+  #   }
+
+  #   allowed_value: {
+  #     label: "MONTH"
+  #     value: "MONTH"
+  #   }
+  # }
+
+  # dimension: reporting_period {
+  #   # group_label: "Order Date"
+  #   sql: CASE
+  #       WHEN EXTRACT({% parameter select_timeframe %} from ${created_raw}) = EXTRACT({% parameter select_timeframe %} from CURRENT_TIMESTAMP())
+  #       AND ${created_raw} < CURRENT_TIMESTAMP()
+  #       THEN 'This {% parameter select_timeframe %} to Date'
+
+  #       WHEN EXTRACT({% parameter select_timeframe %} from ${created_raw}) + 1 = EXTRACT({% parameter select_timeframe %} from CURRENT_TIMESTAMP())
+  #       AND CAST(FORMAT_TIMESTAMP('%j', ${created_raw}) AS INT64) <= CAST(FORMAT_TIMESTAMP('%j', CURRENT_TIMESTAMP()) AS INT64)
+  #       THEN 'Last {% parameter select_timeframe %} to Date'
+
+  #     END
+  #     ;;
+  # }
+
 
 
 
