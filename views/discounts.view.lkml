@@ -43,6 +43,6 @@ view: discounts {
 
   measure: count {
     type: count
-    drill_fields: []
+    drill_fields: [date_date,product_id, retail_price]
   }
 }
