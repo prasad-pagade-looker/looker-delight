@@ -22,7 +22,7 @@ explore: order_items {
   # }
 ##############################################
 
-  sql_always_where: ${users.state} = '{{ _user_attributes['state']}}' OR ${users.city} = '{{ _user_attributes['city']}}';;
+  #sql_always_where: ${users.state} = '{{ _user_attributes['state']}}' OR ${users.city} = '{{ _user_attributes['city']}}';;
 
 # always_filter: {
 #   filters: [order_items.status: "-Cancelled"]
